@@ -19,3 +19,34 @@
 .usermotto {
   margin-top: 200px;
 }
+
+.swiper-tab {
+  width: 100%;
+  border-bottom: 2rpx solid gainsboro;
+  text-align: center;
+  line-height:80rpx;
+}
+
+.swiper-tab-list {
+  font-size: 30rpx;
+  display: inline-block;
+  width: 20%;
+  color: #777;
+}
+
+.on {
+  color: #7cba23;
+  border-bottom: 5rpx solid #7cba23;
+}
+
+.swiper{ 
+  display: block; 
+  height: 100%; 
+  width: 100%; 
+  overflow: hidden; 
+} 
+
+.swiper view{    
+    text-align: center;   
+    padding-top: 100rpx;   
+}    

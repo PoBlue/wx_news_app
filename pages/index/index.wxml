@@ -1,13 +1,25 @@
 <!--index.wxml-->
 <view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+  <view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">全部</view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">通知</view>
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">调研</view>
+    <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">讲座</view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+
+  <swiper current="{{currentTab}}" class="swiper" duration="300" style="height:{{winHeight - 30}}px" bindchange="bindChange">  
+      <swiper-item>  
+          <view>页面一</view>  
+      </swiper-item>  
+      <swiper-item>  
+          <view>页面二</view>  
+      </swiper-item>  
+      <swiper-item>  
+          <view>页面三</view>  
+      </swiper-item>
+      <swiper-item>  
+          <view>页面4</view>  
+      </swiper-item>  
+  </swiper> 
+  
 </view>
