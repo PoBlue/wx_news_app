@@ -16,9 +16,17 @@ function get(url, params) {
   return promise;
 }
 
+function formatTime(isoString) {
+  const date = new Date(isoString)
+  return `${new Intl.DateTimeFormat('chinese').format(date)} ${date.getHours()}:${date.getMinutes()}`
+}
+
 export function getNewsList(newsType) {
   return get(NEWS_LIST_URL, {"type": newsType})
-            .then(res => res.data.result);
+            .then(res => res.data.result.map(item => {
+              item.date = formatTime(item.date)
+              return item;
+            }));
 }
 
 export function getNewDetail(id) {

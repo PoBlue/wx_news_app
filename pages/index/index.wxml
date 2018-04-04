@@ -13,6 +13,8 @@
           <scroll-view scroll-x="false" scroll-y="true" class='scroll-views'>
             <view wx:for="{{ newsList }}" wx:key="{{ id }}">
               <text>{{ item.title }}</text>
+              <text>{{ item.source }}</text>
+              <text>{{ item.date }}</text>
               <image src="{{ item.firstImage }}"></image> 
             </view>  
           </scroll-view>
