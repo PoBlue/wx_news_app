@@ -1,25 +1,22 @@
 <!--index.wxml-->
 <view class="container">
+
   <view class="swiper-tab">
-    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" data-current="0" bindtap="swichNav">全部</view>
-    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" data-current="1" bindtap="swichNav">通知</view>
-    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" data-current="2" bindtap="swichNav">调研</view>
-    <view class="swiper-tab-list {{currentTab==3 ? 'on' : ''}}" data-current="3" bindtap="swichNav">讲座</view>
+    <block wx:for="{{ tabNames }}" wx:key="{{ index }}">
+      <view class="swiper-tab-list {{currentTab==index ? 'on' : ''}}" data-current="{{ index }}" bindtap="swichNav">{{ item }}</view>
+    </block>
   </view>
 
-  <swiper current="{{currentTab}}" class="swiper" duration="300" style="height:{{winHeight - 30}}px" bindchange="bindChange">  
-      <swiper-item>  
-          <view>页面一</view>  
-      </swiper-item>  
-      <swiper-item>  
-          <view>页面二</view>  
-      </swiper-item>  
-      <swiper-item>  
-          <view>页面三</view>  
-      </swiper-item>
-      <swiper-item>  
-          <view>页面4</view>  
-      </swiper-item>  
-  </swiper> 
   
+    <swiper current="{{currentTab}}" class="swiper" duration="300" style="height:{{winHeight - 30}}px" bindchange="bindChange">  
+        <swiper-item class="swiper-item" wx:for="{{ tabNames }}" wx:key="{{ index }}"> 
+          <scroll-view scroll-x="false" scroll-y="true" class='scroll-views'>
+            <view wx:for="{{ newsList }}" wx:key="{{ id }}">
+              <text>{{ item.title }}</text>
+              <image src="{{ item.firstImage }}"></image> 
+            </view>  
+          </scroll-view>
+        </swiper-item>   
+    </swiper> 
+
 </view>

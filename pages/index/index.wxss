@@ -30,7 +30,7 @@
 .swiper-tab-list {
   font-size: 30rpx;
   display: inline-block;
-  width: 20%;
+  width: 14%;
   color: #777;
 }
 
@@ -39,14 +39,23 @@
   border-bottom: 5rpx solid #7cba23;
 }
 
-.swiper{ 
+.swiper { 
   display: block; 
   height: 100%; 
   width: 100%; 
   overflow: hidden; 
 } 
 
-.swiper view{    
+.swiper-item {
+  height: 100%;
+  width: 100%;
+}
+
+.scroll-views{
+  height: 100%;
+}
+
+.swiper view {    
     text-align: center;   
     padding-top: 100rpx;   
 }    

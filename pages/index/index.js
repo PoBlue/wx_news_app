@@ -2,12 +2,14 @@
 //获取应用实例
 const app = getApp()
 const network = require("../../utils/network.js") 
+const NEWS_TYPE = ["gn", "gj", "cj", "yl", "js", "ty", "other"]
 
 Page({
   data: {
     isLoading: false,
     newsList: [],
     currentTab: 0,
+    tabNames: NEWS_TYPE,
   },
   onLoad: function () {
     const self = this;
@@ -39,6 +41,15 @@ Page({
   },
   bindChange: function (e) {
     var self = this;
+    const newsType = this.data.tabNames[e.detail.current];
+
+    network.getNewsList(newsType)
+      .then(res => {
+        this.setData({
+          newsList: res,
+        })
+      })
+    
     self.setData({ currentTab: e.detail.current });
   },
 })
