@@ -55,7 +55,37 @@
   height: 100%;
 }
 
-.swiper view {    
-    text-align: center;   
-    padding-top: 100rpx;   
-}    
+.item-view {
+  height: 144rpx;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: 2rpx solid gainsboro;
+  padding: 8rpx;
+  padding-bottom: 16rpx;
+}
+
+.title {
+  font-size: 32rpx;
+}
+
+.side-im {
+  font-size: 24rpx;
+}
+
+.first-image {
+  flex: 1;
+  height: 90%;
+  margin: 8rpx;
+  padding: 8rpx;
+}
+
+.msg {
+  flex: 3;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 8rpx;
+}
