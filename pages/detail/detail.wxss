@@ -1,1 +1,49 @@
 /* pages/detail/detail.wxss */
+
+.container {
+  margin: 16rpx;
+}
+
+.title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin: 8rpx;
+  /* text-align: center; */
+}
+
+.strong {
+  font-weight: bold;
+}
+
+text {
+  font-weight: normal;
+  text-align: left;
+  font-size: 0.9rem;
+  margin: 8rpx;
+  margin-top: 16rpx;
+  margin-bottom: 16rpx;
+}
+
+image {
+  width: 100%;
+  margin: 8rpx;
+  margin-top: 16rpx;
+  margin-bottom: 16rpx;
+}
+
+.msg {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.msg text {
+  flex: 1;
+  font-size: 0.8rem;
+  color: grey;
+}
+
+.read-count {
+  text-align: right;
+}

@@ -72,6 +72,7 @@
 
 .side-im {
   font-size: 24rpx;
+  color: grey;
 }
 
 .first-image {

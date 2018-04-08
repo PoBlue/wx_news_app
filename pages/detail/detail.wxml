@@ -1,13 +1,15 @@
 <!-- detail.wxml -->
 <view class="container">
-  <text>{{detailData.title}}</text>
-  <text>{{detailData.source}} {{detailData.date}}</text>
-  <text>{{detailData.readCount}}</text>
+  <text class='title'>{{detailData.title}}</text>
+  <view class='msg'>
+    <text>{{detailData.source}} {{detailData.date}}</text>
+    <text class='read-count'>阅读数：{{detailData.readCount}}</text>
+  </view>
 
   <block wx:for="{{detailData.content}}" wx:key="{{id}}">
     <image wx:if="{{item.type == 'image'}}" src="{{item.src}}"></image>
-    <text wx:elif="{{item.type == 'p'}}">{{item.text}}</text>
-    <text wx:elif="{{item.type == 'strong'}}">{{item.text}}</text>
+    <text wx:elif="{{item.type == 'p'}}" class='text'>{{item.text}}</text>
+    <text wx:elif="{{item.type == 'strong'}}" class='strong'>{{item.text}}</text>
     <text wx:else>error parse: {{item}}</text>
   </block>
 
