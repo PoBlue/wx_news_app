@@ -23,8 +23,14 @@ Page({
       }
     });
 
+    wx.showLoading({
+      title: '加载中...',
+    })
+
     network.getNewsList('gn')
       .then(res => {
+        wx.hideLoading();
+
         this.setData({
           newsList: res,
         })
@@ -43,8 +49,14 @@ Page({
     var self = this;
     const newsType = this.data.tabNames[e.detail.current];
 
+    wx.showLoading({
+      title: '加载中...',
+    })
+
     network.getNewsList(newsType)
       .then(res => {
+        wx.hideLoading();
+        
         this.setData({
           newsList: res,
         })

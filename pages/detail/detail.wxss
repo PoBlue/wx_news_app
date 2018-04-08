@@ -1,7 +1,7 @@
 /* pages/detail/detail.wxss */
 
 .container {
-  margin: 16rpx;
+  margin: 24rpx;
 }
 
 .title {
