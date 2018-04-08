@@ -1,18 +1,26 @@
 // pages/detail/detail.js
+const network = require("../../utils/network.js") 
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    detailData: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
+    network.getNewDetail(options.id)
+      .then(res => {
+        console.log(res)
+        this.setData({
+          detailData: res,
+        })
+      })
   },
 
   /**

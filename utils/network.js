@@ -31,5 +31,8 @@ export function getNewsList(newsType) {
 
 export function getNewDetail(id) {
   return get(NEWS_DETAIL_URL, {"id": id})
-          .then(res => res);
+          .then(res => {
+            res.data.result.date = formatTime(res.data.result.date)
+            return res.data.result
+          });
 }

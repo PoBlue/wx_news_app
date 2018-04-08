@@ -12,7 +12,7 @@
         <swiper-item class="swiper-item" wx:for="{{ tabNames }}" wx:key="{{ index }}"> 
           <scroll-view scroll-x="false" scroll-y="true" class='scroll-views'>
             <block wx:for="{{ newsList }}" wx:key="{{ id }}">
-                <navigator url="../detail/detail">
+                <navigator url="../detail/detail?id={{item.id}}">
                 <view  class='item-view'>
                   <view class='msg'>
                     <view class='title'>
