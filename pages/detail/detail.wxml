@@ -1,5 +1,11 @@
 <!-- detail.wxml -->
 <view class="container">
+  <block wx:if="{{errorMsg}}">
+    <text>{{errorMsg}}</text>
+  </block>
+
+  <block wx:else>
+
   <text class='title'>{{detailData.title}}</text>
   <view class='msg'>
     <text>{{detailData.source}} {{detailData.date}}</text>
@@ -11,6 +17,8 @@
     <text wx:elif="{{item.type == 'p'}}" class='text'>{{item.text}}</text>
     <text wx:elif="{{item.type == 'strong'}}" class='strong'>{{item.text}}</text>
     <text wx:else>error parse: {{item}}</text>
+  </block>
+
   </block>
 
 </view>

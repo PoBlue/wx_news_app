@@ -6,10 +6,14 @@
       <view class="swiper-tab-list {{currentTab==index ? 'on' : ''}}" data-current="{{ index }}" bindtap="swichNav">{{ item }}</view>
     </block>
   </view>
-
   
     <swiper current="{{currentTab}}" class="swiper" duration="300" style="height:{{winHeight - 30}}px" bindchange="bindChange">  
         <swiper-item class="swiper-item" wx:for="{{ tabNames }}" wx:key="{{ index }}"> 
+
+          <block wx:if="{{errorMsg}}">
+            <text>{{errorMsg}}</text>
+          </block>
+          <block wx:else>
           <scroll-view scroll-x="false" scroll-y="true" class='scroll-views'>
             <block wx:for="{{ newsList }}" wx:key="{{ id }}">
                 <navigator url="../detail/detail?id={{item.id}}">
@@ -28,6 +32,7 @@
                 </navigator>
             </block>  
           </scroll-view>
+          </block>
         </swiper-item>   
     </swiper> 
 

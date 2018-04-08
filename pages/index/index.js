@@ -11,6 +11,7 @@ Page({
     newsList: [],
     currentTab: 0,
     tabNames: TAB_NAME,
+    errorMsg: '',
   },
   onLoad: function () {
     const self = this;
@@ -34,6 +35,15 @@ Page({
 
         this.setData({
           newsList: res,
+          errorMsg: ''
+        })
+      })
+      .catch(res => {
+        wx.hideLoading();
+        console.log(res)
+
+        self.setData({
+          errorMsg: '请求错误, 请检查网络'
         })
       })
   },
@@ -60,6 +70,15 @@ Page({
 
         this.setData({
           newsList: res,
+          errorMsg: ''
+        })
+      })
+      .catch(res => {
+        wx.hideLoading();
+        console.log(res)
+        
+        self.setData({
+          errorMsg: '请求错误, 请检查网络'
         })
       })
     
