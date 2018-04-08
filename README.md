@@ -4,8 +4,9 @@
 ## 页面预览图
 
 
-![主页预览图](https://user-images.githubusercontent.com/9304701/38469166-f4b0ade6-3b82-11e8-8b4a-df0c86587bea.png)
-![详情页](https://user-images.githubusercontent.com/9304701/38469193-49c383c6-3b83-11e8-9b45-e60fdd522546.png)
+<img alt="主页" width="300px" src="https://user-images.githubusercontent.com/9304701/38469166-f4b0ade6-3b82-11e8-8b4a-df0c86587bea.png"/>
+
+<img alt="详情页" width="300px" src="https://user-images.githubusercontent.com/9304701/38469193-49c383c6-3b83-11e8-9b45-e60fdd522546.png"/>
 
 ## 参考
 
