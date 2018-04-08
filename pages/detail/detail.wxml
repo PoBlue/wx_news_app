@@ -1,0 +1,4 @@
+<!-- detail.wxml -->
+<view class="container">
+  hello,world!
+</view>

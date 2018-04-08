@@ -11,18 +11,22 @@
     <swiper current="{{currentTab}}" class="swiper" duration="300" style="height:{{winHeight - 30}}px" bindchange="bindChange">  
         <swiper-item class="swiper-item" wx:for="{{ tabNames }}" wx:key="{{ index }}"> 
           <scroll-view scroll-x="false" scroll-y="true" class='scroll-views'>
-            <view class='item-view' wx:for="{{ newsList }}" wx:key="{{ id }}">
-              <view class='msg'>
-                  <view class='title'>
-                  {{ item.title }}
-                </view> 
-                <view class='side-im'>
-                  {{ item.source }}
-                  {{ item.date }}
-                </view> 
-              </view>
-              <image mode='aspectFill' class='first-image' src="{{ item.firstImage }}"></image>  
-            </view>  
+            <block wx:for="{{ newsList }}" wx:key="{{ id }}">
+                <navigator url="../detail/detail">
+                <view  class='item-view'>
+                  <view class='msg'>
+                    <view class='title'>
+                      {{ item.title }}
+                    </view> 
+                    <view class='side-im'>
+                      {{ item.source }}
+                      {{ item.date }}
+                    </view> 
+                  </view> 
+                  <image mode='aspectFill' class='first-image' src="{{ item.firstImage }}"></image>       
+                </view>
+                </navigator>
+            </block>  
           </scroll-view>
         </swiper-item>   
     </swiper> 
